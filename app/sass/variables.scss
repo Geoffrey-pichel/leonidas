@@ -23,10 +23,10 @@ $container-max-widths: (
 $primary:    #06255B;
 $secondary:  #DF6954;
 $green:   #BFCB00;
+$orange-light: #FFF5EB;
 $light: #FFFFAC;
 $gray-700: #3D3D3D;
 $dark : $gray-700;
-
 
 @mixin rounded($radius: 0.4rem) {
     border-radius: $radius;
