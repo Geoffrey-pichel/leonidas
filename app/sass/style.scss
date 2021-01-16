@@ -1,3 +1,172 @@
-body {
-    padding: 1rem;
+@import "../sass/variables.scss";
+@import "../sass/mixins.scss";
+@import "bootstrap/scss/bootstrap.scss";
+
+
+
+/* ---------------------------------------- general */
+
+
+html, body {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+h1 {
+    @include font-values(7.2rem, 700, $white);
+    width: min-content;
+    min-width: 120%;
+}
+
+h2 {
+    @include font-values(4.8rem, 700, $primary);
+    margin-bottom: 3rem;
+
+    em {
+        font-family: "Leonidas Script TB 2";
+        @include font-values(6rem, 400, $primary);
+        font-style: normal;
+    }
+
+}
+
+h3 {
+    @include font-values(3rem, 700, $primary)
+}
+
+p {
+    @include font-values(18px, 400, $dark);
+}
+
+li[class]{list-style: none;}
+
+
+a.btn {
+    font-size: 1.8rem;
+    padding: 1.5rem 3rem; 
+    @include rounded;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+    color: #ffffff;
+}
+
+
+/* ---------------------------------------- header */
+
+header, #saison{
+    background-color: $green;
+}
+
+header#header {
+        .header-img {
+            max-height: 1015px;
+            @include section-img;
+        }
+
+    .main-content{
+        position: relative;
+        min-height: 1015px;
+
+        .main-content-inner {
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+    }
+}
+
+/* ---------------------------------------- navigation */
+
+.navbar {
+    z-index: 99;
+}
+
+div.menu {
+    flex-direction: column;
+}
+
+
+.navbar-nav {
+    justify-content: flex-end;
+    li.nav-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: .25rem 1rem;
+
+         a.nav-link{
+            font-size: 2rem;
+            color: $white;        
+        }
+    }
+}
+
+.nav {
+    ul li a.nav-link {
+        text-transform: uppercase;
+    }
+}
+
+/* ---------------------------------------- boutique */
+
+#boutique {
+    width: 85%;
+    z-index: 2;
+    bottom: -10%;
+}
+
+.search-form input {
+    @extend a.btn;
+    max-width: 400px;
+
+    &::placeholder {
+        color: $primary
+    }
+}
+
+/* ---------------------------------------- saison */
+
+
+#saison {
+    position: relative;
+    
+    .saison-img{
+        @include section-img;   
+
+        &:nth-child(2){
+            max-height: 100%;
+            left: unset;
+            right: 0;
+        }
+    }
+
+
+    .saison-inner {
+        min-height: 900px;
+
+        h2{
+            width: 80%;
+        }
+    }
+}
+
+.saison-img{
+    max-height: 754px;
+}
+
+/* ---------------------------------------- qualite */
+
+#qualite {
+
+    img,
+    h3 {
+        padding: 3rem 0;
+    }
+
+    p {
+        padding: 0 1.5rem;
+    }
 }
