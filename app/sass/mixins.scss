@@ -1,11 +1,9 @@
-@mixin section-img {
-    width: auto;
-    left: 0;
-    z-index: 0;
-}
-
-@mixin font-values($fontsize, $fontweight, $fontcolor) {
+@mixin font-values($fontsize, $fontweight, $fontcolor : $dark) {
     font-size: $fontsize;
     font-weight: $fontweight;
     color: $fontcolor;
+}
+
+@mixin fill($fill: $primary) {
+    fill: $fill;
 }
