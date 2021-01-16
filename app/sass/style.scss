@@ -1,7 +1,17 @@
 @import "../sass/variables.scss";
 @import "../sass/mixins.scss";
+@import "../sass/utilities.scss";
 @import "bootstrap/scss/bootstrap.scss";
 
+
+
+/* ---------------------------------------- sass placeholders */
+
+%section-img {
+    width: auto;
+    left: 0;
+    z-index: 0;
+}
 
 
 /* ---------------------------------------- general */
@@ -16,7 +26,7 @@ html, body {
 h1 {
     @include font-values(7.2rem, 700, $white);
     width: min-content;
-    min-width: 120%;
+    white-space: nowrap;
 }
 
 h2 {
@@ -32,11 +42,12 @@ h2 {
 }
 
 h3 {
-    @include font-values(3rem, 700, $primary)
+    @include font-values(3rem, 700, $primary);
+    padding: 3rem 0;
 }
 
-p {
-    @include font-values(18px, 400, $dark);
+p, a {
+    @include font-values(18px, 400);
 }
 
 li[class]{list-style: none;}
@@ -53,6 +64,10 @@ a.btn {
     color: #ffffff;
 }
 
+figcaption {
+    @include font-values(25px, 400)
+}
+
 
 /* ---------------------------------------- header */
 
@@ -61,14 +76,16 @@ header, #saison{
 }
 
 header#header {
+
         .header-img {
             max-height: 1015px;
-            @include section-img;
+            @extend %section-img;
+            bottom: 5%;   
         }
 
     .main-content{
         position: relative;
-        min-height: 1015px;
+        min-height: 900px;
 
         .main-content-inner {
             left: 50%;
@@ -134,7 +151,7 @@ div.menu {
     position: relative;
     
     .saison-img{
-        @include section-img;   
+        @extend %section-img;
 
         &:nth-child(2){
             max-height: 100%;
@@ -157,16 +174,220 @@ div.menu {
     max-height: 754px;
 }
 
+/* ---------------------------------------- decouverte */
+
+#decouverte {
+    
+    .btn {
+        max-width: fit-content;
+    }
+
+    .pralines  {
+        min-height: 650px;
+
+         & > div:last-child {
+            position: relative;
+            left: -5%;
+        }
+
+        img {
+            position: absolute;
+            bottom: -10%;
+            z-index: 1;
+        }
+    }
+
+   
+
+    .gourmandises {
+        min-height: 650px;
+
+        & > div:last-child {
+            position: relative;
+            right: -45%;
+            top: -10%;
+        }
+
+        img {
+            position: absolute;
+            left: -45%;
+            top: -10%;
+            z-index: 0;
+        }
+    }
+
+}
+
+
+/* ---------------------------------------- moments */
+
+#moments {
+
+
+    .row {
+        position: relative;
+        background-color: $orange-light;
+        max-width: 75%;
+        margin-left: auto;
+    }
+
+    .moments-img {
+        max-height: 885px;
+        width: auto;
+        top: -10%;
+        left: 0;
+        z-index: 1;
+
+        img {
+            height: inherit;
+            min-width: 870px;
+        }
+    }
+
+    .moments-list {
+        padding: 6rem 0;
+        position: relative;
+        top: 20%;
+    }
+
+    .moments-item {
+        display: flex;
+        position: relative;
+
+        &:before {
+            content: "";
+            display: block;
+            height: 3px;
+            background-color: $secondary;
+            width: 165px;
+            position: absolute;
+            left: -25%;
+            top: 50%;
+            z-index: 99;
+        }
+
+        &:last-of-type{
+            margin-bottom: 3rem;
+        }
+
+    }    
+
+    svg {
+        position: relative;
+        float: left;
+        margin-right: 3rem;
+        height: 10rem;
+        width: auto;
+
+        path {
+            @include fill;
+
+        } 
+
+        .light-path {
+            fill: #D2DDF2;
+        }
+    }
+
+    svg.active {
+
+        path {
+            @include fill($secondary);
+        }
+        
+        .light-path {
+                fill: #F7B289;
+            }
+    }
+   
+}
+
 /* ---------------------------------------- qualite */
 
 #qualite {
 
-    img,
-    h3 {
+    img {
         padding: 3rem 0;
     }
 
     p {
         padding: 0 1.5rem;
+    }
+}
+
+
+/* ---------------------------------------- newsletter */
+
+#newsletter{
+    min-height: 442px;
+    background: url(../images/img-newsletter.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    @extend %flex-align;
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+
+    .newsletter-inner {
+        @extend %flex-align;
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .newsletter-icon {
+        max-height: 9rem;
+        height: 100%;
+        width: auto;
+    }
+}
+
+/* ---------------------------------------- À propos */
+
+#apropos {
+
+    .row {
+        @extend %flex-align;
+        border-bottom: 3px solid $secondary;
+    }
+}
+
+
+/* ---------------------------------------- footer */
+
+footer#footer {
+
+    .container,
+    ul {
+        padding: 0;
+    }
+
+    li.nav-item {
+        display: flex;
+        align-items: center;
+
+        a.nav-link {
+            text-transform: uppercase;
+            color: $primary;
+        }
+
+        &:last-of-type {
+            margin-bottom: 3rem;
+        }
+
+        &:before {
+            content: url("../images/icons/chevron-right.svg");
+            height: 100%;
+            max-height: 16px;
+            width: auto;
+            margin-right: 1.5rem;
+            display: inline-block;
+        }
+
+       
+    }
+
+    .social-icon {
+        margin-right: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 }
