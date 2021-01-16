@@ -1,3 +1,9 @@
+@charset "UTF-8";
+#newsletter, #newsletter .newsletter-inner, #apropos .row {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
 /*!
  * Bootstrap v5.0.0-beta1 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -7386,6 +7392,12 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important; } }
 
+/* ---------------------------------------- sass placeholders */
+header#header .header-img, #saison .saison-img {
+  width: auto;
+  left: 0;
+  z-index: 0; }
+
 /* ---------------------------------------- general */
 html, body {
   font-family: "Ubuntu", sans-serif;
@@ -7397,7 +7409,7 @@ h1, .h1 {
   font-weight: 700;
   color: #fff;
   width: min-content;
-  min-width: 120%; }
+  white-space: nowrap; }
 
 h2, .h2 {
   font-size: 4.8rem;
@@ -7414,9 +7426,10 @@ h2, .h2 {
 h3, .h3 {
   font-size: 3rem;
   font-weight: 700;
-  color: #06255B; }
+  color: #06255B;
+  padding: 3rem 0; }
 
-p {
+p, a {
   font-size: 18px;
   font-weight: 400;
   color: #3D3D3D; }
@@ -7435,19 +7448,22 @@ a.btn, .search-form input {
 .btn.btn-secondary {
   color: #ffffff; }
 
+figcaption {
+  font-size: 25px;
+  font-weight: 400;
+  color: #3D3D3D; }
+
 /* ---------------------------------------- header */
 header, #saison {
   background-color: #BFCB00; }
 
 header#header .header-img {
   max-height: 1015px;
-  width: auto;
-  left: 0;
-  z-index: 0; }
+  bottom: 5%; }
 
 header#header .main-content {
   position: relative;
-  min-height: 1015px; }
+  min-height: 900px; }
   header#header .main-content .main-content-inner {
     left: 50%;
     transform: translateX(-50%);
@@ -7488,14 +7504,10 @@ div.menu {
 /* ---------------------------------------- saison */
 #saison {
   position: relative; }
-  #saison .saison-img {
-    width: auto;
-    left: 0;
-    z-index: 0; }
-    #saison .saison-img:nth-child(2) {
-      max-height: 100%;
-      left: unset;
-      right: 0; }
+  #saison .saison-img:nth-child(2) {
+    max-height: 100%;
+    left: unset;
+    right: 0; }
   #saison .saison-inner {
     min-height: 900px; }
     #saison .saison-inner h2, #saison .saison-inner .h2 {
@@ -7504,11 +7516,136 @@ div.menu {
 .saison-img {
   max-height: 754px; }
 
+/* ---------------------------------------- decouverte */
+#decouverte .btn {
+  max-width: fit-content; }
+
+#decouverte .pralines {
+  min-height: 650px; }
+  #decouverte .pralines > div:last-child {
+    position: relative;
+    left: -5%; }
+  #decouverte .pralines img {
+    position: absolute;
+    bottom: -10%;
+    z-index: 1; }
+
+#decouverte .gourmandises {
+  min-height: 650px; }
+  #decouverte .gourmandises > div:last-child {
+    position: relative;
+    right: -45%;
+    top: -10%; }
+  #decouverte .gourmandises img {
+    position: absolute;
+    left: -45%;
+    top: -10%;
+    z-index: 0; }
+
+/* ---------------------------------------- moments */
+#moments .row {
+  position: relative;
+  background-color: #FFF5EB;
+  max-width: 75%;
+  margin-left: auto; }
+
+#moments .moments-img {
+  max-height: 885px;
+  width: auto;
+  top: -10%;
+  left: 0;
+  z-index: 1; }
+  #moments .moments-img img {
+    height: inherit;
+    min-width: 870px; }
+
+#moments .moments-list {
+  padding: 6rem 0;
+  position: relative;
+  top: 20%; }
+
+#moments .moments-item {
+  display: flex;
+  position: relative; }
+  #moments .moments-item:before {
+    content: "";
+    display: block;
+    height: 3px;
+    background-color: #DF6954;
+    width: 165px;
+    position: absolute;
+    left: -25%;
+    top: 50%;
+    z-index: 99; }
+  #moments .moments-item:last-of-type {
+    margin-bottom: 3rem; }
+
+#moments svg {
+  position: relative;
+  float: left;
+  margin-right: 3rem;
+  height: 10rem;
+  width: auto; }
+  #moments svg path {
+    fill: #06255B; }
+  #moments svg .light-path {
+    fill: #D2DDF2; }
+
+#moments svg.active path {
+  fill: #DF6954; }
+
+#moments svg.active .light-path {
+  fill: #F7B289; }
+
 /* ---------------------------------------- qualite */
-#qualite img,
-#qualite h3,
-#qualite .h3 {
+#qualite img {
   padding: 3rem 0; }
 
 #qualite p {
   padding: 0 1.5rem; }
+
+/* ---------------------------------------- newsletter */
+#newsletter {
+  min-height: 442px;
+  background: url(../images/img-newsletter.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-top: 10rem;
+  margin-bottom: 5rem; }
+  #newsletter .newsletter-inner {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 3rem; }
+  #newsletter .newsletter-icon {
+    max-height: 9rem;
+    height: 100%;
+    width: auto; }
+
+/* ---------------------------------------- À propos */
+#apropos .row {
+  border-bottom: 3px solid #DF6954; }
+
+/* ---------------------------------------- footer */
+footer#footer .container,
+footer#footer ul {
+  padding: 0; }
+
+footer#footer li.nav-item {
+  display: flex;
+  align-items: center; }
+  footer#footer li.nav-item a.nav-link {
+    text-transform: uppercase;
+    color: #06255B; }
+  footer#footer li.nav-item:last-of-type {
+    margin-bottom: 3rem; }
+  footer#footer li.nav-item:before {
+    content: url("../images/icons/chevron-right.svg");
+    height: 100%;
+    max-height: 16px;
+    width: auto;
+    margin-right: 1.5rem;
+    display: inline-block; }
+
+footer#footer .social-icon {
+  margin-right: 1.5rem;
+  margin-bottom: 1.5rem; }
