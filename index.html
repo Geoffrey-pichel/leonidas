@@ -27,129 +27,352 @@
 <body>
     <div class="wrapper">
         <header id="header">
-            <div class="brand-container">
-                <a href="#" class="brand-link">
-                    <img src="app/images/logos/Logo Leonidas.svg" alt="Leonidas logo" class="brand"></img>
-                </a>
-            </div>
 
-            <nav class="nav col-lg-8" role="navigation">
-                <ul>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">magasin</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">magasin</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">magasin</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">magasin</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">magasin</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">magasin</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">magasin</a>
-                    </li>
-                </ul>
+            <nav class="navbar navbar-expand-lg position-relative mb-5">
+
+                <div class="container">
+
+
+                    <a href="#" class="navbar-brand">
+                        <img src="app/images/logos/Logo Leonidas.svg" alt="Leonidas logo" class="brand"></img>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="menu collapse navbar-collapse" id="navbarSupportedContent">
+
+                        <div class="topnav navbar-nav col-12">
+                            <ul class="d-flex flex-xxl-row flex-column">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Nos gammes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Carrière</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Blog</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">FR</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Ma wishlist</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link btn">Commander en ligne</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link btn">Professionel</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="nav navbar-nav col-12" role="navigation">
+                            <ul class="d-flex flex-xxl-row flex-column">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">magasins</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">pralines</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">gourmandises</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">moments de bonheur</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">printemps</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">à propos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">contact</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
             </nav>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-xxl-6">
-                        <h1>La boîte à bonheurs</h1>
+            <div class="main-content">
+
+                <img src="./app/images/img-header.png" alt="" class="header-img img-fluid position-absolute">
+
+                <!-- <img src="./app/images/header-overlay.png" alt="" class="header-img img-fluid position-absolute"> -->
+
+                <div class="container main-content-inner position-absolute">
+                    <div class="row align-items-center w-100 mx-auto">
+                        <div class="col-xxl-auto offset-xxl-3">
+                            <h1>La boîte </br>à bonheurs</h1>
+                        </div>
+                        <div class="col-xxl-6 mx-auto d-flex justify-content-center">
+                            <figure>
+                                <img src="./app/images/img saison 323x480.png" alt="saison">
+                                <figcaption>Irrésistible surprise</figcaption>
+                            </figure>
+                        </div>
                     </div>
-                    <div class="col-xxl-6">
-                        <figure> 
-                            <img src="./app/images/img saison 323x480.png" alt="saison">
-                            <figcaption>Irrésistible surprise</figcaption>
-                        </figure>
-                    </div>                                      
+
                 </div>
-                
+
+                <div id="boutique" role="banner" class="bg-primary position-absolute py-5">
+                    <div class="container py-5 me-0 ms-auto">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-xxl-1 ps-5">
+                                <img src="./app/images/icons/boutique.svg" alt="Boutique" class="img-fluid">
+                            </div>
+                            <div class="col-xxl-6">
+                                <h2 class="text-white mb-0 ps-5">Trouvez la boutique la plus proche de chez vous.</h2>
+                            </div>
+                            <div class="col-xxl-5">
+                                <form class="d-flex search-form">
+                                    <input class="form-control" type="search" placeholder="CP, Ville, Rue" aria-label="Search">
+                                    <button class="btn btn-secondary" type="submit">
+                                        <img src="./app/images/icons/search-icon.svg" alt="">
+                                    </button>
+                                </form>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div id="boutique" role="banner" class="bg-primary">
-                <img src="./app/images/icons/boutique.svg" alt="Boutique">
-                <h2>Trouvez la boutique la plus proche de chez vous.</h2>
-                <form action="">
-                    <input type="text">
-                    <a href=""></a>
-                </form>
+
+            <div id="saison" class="position-relative d-flex align-items-center">
+
+                <img src="./app/images/Lapin luminuex et tas d'oeufd 1.png" alt=""
+                    class="saison-img img-fluid position-absolute">
+                <img src="./app/images/glow.png" alt="" class="saison-img img-fluid position-absolute">
+
+                <div class="saison-inner container d-flex align-items-center position-relative">
+                    <div class="row w-100">
+                        <div class="col-xxl-6 offset-xxl-6">
+                            <h2>La chasse aux <em>bonheurs</em> est ouverte</h2>
+                            <p class="w-50 mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam porro
+                                quasi reiciendis aut
+                                odio mollitia explicabo amet, molestias ex illo dolorum doloribus, quas non
+                                necessitatibus eius officiis provident eum illum.</p>
+                            <a href="" class="btn btn-light text-primary">La gamme Pâques</a>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </header>
 
         <main id="main" role="main">
 
-          <section id="saison">
-              <div class="container">
-                  <div class="row">
-                      <div class="col-xxl-6 offset-xxl-6">
-                          <h2>La chasse aux <em>bonheurs</em> est ouverte</h2>
-                          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam porro quasi reiciendis aut odio mollitia explicabo amet, molestias ex illo dolorum doloribus, quas non necessitatibus eius officiis provident eum illum.</p>
-                          <a href="" class="btn">La gamme Pâques</a>
-                      </div>
-                  </div>
-              </div>
-          </section>
-          <section id="decouverte">
-              <div class="container">
-                  <div class="row">
-                      <div class="col-xxl-6 order-xxl-first">
-                          <h2>Découvrez nos <em>pralines</em></h2>
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque vitae, cumque, aliquam autem similique saepe magnam sit itaque inventore consequatur fugit iste, ipsa facilis corrupti corporis nostrum praesentium quod et.</p>
-                          <a href="" class="btn-secondary">Toutes les pralines</a>
+            <section id="decouverte">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xxl-6 order-xxl-first">
+                            <h2>Découvrez nos <em>pralines</em></h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque vitae, cumque, aliquam
+                                autem similique saepe magnam sit itaque inventore consequatur fugit iste, ipsa facilis
+                                corrupti corporis nostrum praesentium quod et.</p>
+                            <a href="" class="btn btn-secondary">Toutes les pralines</a>
+                        </div>
+                        <div class="col-xxl-6 order-xxl-last">
+                            <img src="./app/images/Flying chocolates 2018 CMYK 1.jpg" alt="Flying Chocolates 2018">
+                        </div>
                     </div>
-                      <div class="col-xxl-6 order-xxl-last">
-                          <img src="./app/images/Flying chocolates 2018 CMYK 1.jpg" alt="Flying Chocolates 2018">
-                      </div>
-                  </div>
-                  <div class="row">
-                      <div class="col-xxl-6 order-xxl-last">
-                          <h2>Découvrez nos <em>pralines</em></h2>
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque vitae, cumque, aliquam autem similique saepe magnam sit itaque inventore consequatur fugit iste, ipsa facilis corrupti corporis nostrum praesentium quod et.</p>
-                          <a href="" class="btn-secondary">Toutes les pralines</a>
+                    <div class="row">
+                        <div class="col-xxl-6 order-xxl-last">
+                            <h2>Découvrez nos <em>pralines</em></h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque vitae, cumque, aliquam
+                                autem similique saepe magnam sit itaque inventore consequatur fugit iste, ipsa facilis
+                                corrupti corporis nostrum praesentium quod et.</p>
+                            <a href="" class="btn btn-secondary">Toutes les gourmandises</a>
+                        </div>
+                        <div class="col-xxl-6 order-xxl-first">
+                            <img src="./app/images/Flying mendiant orange back CMYK 1.jpg"
+                                alt="Flying mendiant orange back ">
+                        </div>
                     </div>
-                      <div class="col-xxl-6 order-xxl-first">
-                          <img src="./app/images/Flying mendiant orange back CMYK 1.jpg" alt="Flying mendiant orange back ">
-                      </div>
-                  </div>
-              </div>
-          </section>
-          <section id="moments">
-              <div class="container">
-                  <div class="row"></div>
-              </div>
-          </section>
-          <section id="qualite">
-              <div class="container">
-                  <div class="row"></div>
-              </div>
-          </section>
-          <section id="newsletter">
-              <div class="container">
-                  <div class="row"></div>
-              </div>
-          </section>
-          <section id="apropos">
-              <div class="container">
-                  <div class="row"></div>
-              </div>
-          </section>
+                </div>
+            </section>
 
-        
+            <section id="moments" class="p-5">
+                <div class="container p-5">
+                    <div class="row">
+                        <div class="col-xxl-6">
+                            <img src="./app/images/img 885x870.png" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-xxl-6">
+                            <h2>Partagez des <em>moments de bonheur</em></h2>
+
+                            <img src="./app/images/icons/cadeauxromantiques.svg" alt="">
+                            <div class="description">
+                                <h3>Cadeaux romantiques</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            </div>
+
+                            <img src="./app/images/icons/naissance.svg" alt="">
+                            <div class="description">
+                                <h3>Naissance</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            </div>
+
+                            <img src="./app/images/icons/cadeauxanniversaire.svg" alt="">
+                            <div class="description">
+                                <h3>Cadeaux anniversaire</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            </div>
+
+                            <img src="./app/images/icons/cadeauxentreprise.svg" alt="">
+                            <div class="description">
+                                <h3>Cadeaux entreprise</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            </div>
+
+                            <a href="" class="btn btn-secondary">Découvrir tous les moments</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="qualite" class="py-5">
+                <div class="container">
+                    <div class="row text-center mb-4">
+                        <h2 class="col-xxl-6 mx-auto">La <em>qualité</em> est notre plus grand atout</h2>
+                    </div>
+                    <div class="row py-5 mb-5">
+                        <div class="col-xxl-4 d-flex flex-column align-items-center text-center px-5">
+                            <img src="./app/images/icons/huile.svg" alt="">
+                            <h3>Sans huile de palme</h3>
+                            <p>Nos Maîtres Chocolatiers ont l’obsession de la qualité. Il ne veulent que du pur beurre
+                                de cacao. Vous ne trouverez donc pas la moindre goutte d’huile de palme dans notre
+                                chocolat.</p>
+                        </div>
+                        <div class="col-xxl-4 d-flex flex-column align-items-center text-center px-5">
+                            <img src="./app/images/icons/beurredecacao.svg" alt="">
+                            <h3>100% Pur beurre de cacao</h3>
+                            <p>Leonidas veut vous faire vivre des moments de pur délice. Voilà pourquoi nos Maîtres
+                                Chocolatiers n’utilisent que du chocolat 100% pur beurre de cacao.</p>
+                        </div>
+                        <div class="col-xxl-4 d-flex flex-column align-items-center text-center px-5">
+                            <img src="./app/images/icons/belge.svg" alt="">
+                            <h3>Belge depuis 1913</h3>
+                            <p>Les pralines Leonidas sont 100% élaborées en Belgique. Nos Maîtres Chocolatiers
+                                respectent la tradition de notre savoir-faire et transforment avec amour les ingrédients
+                                les plus fins.</p>
+                        </div>
+                      
+                    </div>  
+                    <div class="row">
+                        <div class="col-auto mx-auto">
+                             <a href="" class="btn btn-secondary">En savoir plus</a>
+                        </div>
+                           
+                        </div>
+                </div>
+            </section>
+
+            <section id="newsletter">
+                <div class="container">
+                    <div class="row">
+                        <img src="./app/images/icons/newsletter-icon.svg" alt="">
+                        <h2>Restez informés</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <a href="" class="btn btn-secondary">Lorem ipsum</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="apropos">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xxl-7">
+                            <h3>À propos de Leonidas</h3>
+                            <p>Depuis 1913, Leonidas n'a qu'une mission : rendre les plus savoureuses pralines, d'une
+                                qualité incomparable, accessibles à tous. Notre chocolat belge est aujourd'hui en vente
+                                dans plus de 1300 boutiques du monde entier. Plus de 100 variétés de pralines, toutes
+                                fabriquées à base de chocolat 100% pur beurre de cacao. Toutes les boutiques Leonidas
+                                garantissent finesse du chocolat, fraîcheur, qualité et accessibilité. Ce n'est pas pour
+                                rien que nos pralines sont les préférées des amateurs de chocolat.</p>
+                        </div>
+                        <div class="col-xxl-5">
+                            <img src="./app/images/logos/Frame.svg" alt="Fournisseur Breveté de la Cour de Belgique">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
 
         </main>
 
         <footer id="footer">
-
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-4">
+                        <ul>
+                            <li class="nav-item">
+                                <a href="" class="nav-link">Assortiment</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link">Professionnel</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link">Contactez-nous</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link">Carrière</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xxl-4">
+                        <ul>
+                            <li class="nav-item">
+                                <a href="" class="nav-link">Ouvrir ma boutique</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link">Boutiques</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link">FAQ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link">Aspects Légaux</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xxl-4">
+                        <ul>
+                            <li class="nav-item">
+                                <a href="" class="nav-link">Politique en matière de cookies</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link">
+                                    Politique de protecttion de la vie privée
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="d-flex">
+                            <img src="./app/images/icons/facebook.svg" alt="">
+                            <img src="./app/images/icons/instagram.svg" alt="">
+                            <img src="./app/images/icons/linkedin.svg" alt="">
+                            <img src="./app/images/icons/youtube.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </footer>
+
     </div>
+
+    <script src="./bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
