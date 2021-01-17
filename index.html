@@ -102,8 +102,11 @@
             </nav>
 
             <div class="main-content">
-
-                <img src="./app/images/img-header.png" alt="" class="header-img img-fluid position-absolute">
+                <picture>
+                    <source srcset="./app/images/img-header-mobile.jpg" media="(max-width:320px)">
+                    <img src="./app/images/img-header.png" alt="" class="header-img img-fluid position-absolute"/>
+                </picture>
+                
 
                 <!-- <img src="./app/images/header-overlay.png" alt="" class="header-img img-fluid position-absolute"> -->
 
@@ -114,7 +117,11 @@
                         </div>
                         <div class="col-xxl-6 mx-auto d-flex justify-content-center">
                             <figure>
-                                <img src="./app/images/img saison 323x480.png" alt="saison">
+                                <picture>
+                                    <source srcset="./app/images/img-header-2-mobile.png" media="(max-width:320px)">
+                                    <img src="./app/images/img-header-2.png" alt="saison"/>
+                                </picture>
+                                
                                 <figcaption class="text-white text-center">Irrésistible surprise</figcaption>
                             </figure>
                         </div>
@@ -178,7 +185,7 @@
                 <div class="container py-5">
                     <div class="row pralines py-5">
                         <div
-                            class="col-xxl-5 offset-xxl-1 order-xxl-first p-5 d-flex flex-column justify-content-center">
+                            class="col-lg-5 offset-lg-1 order-first p-5 d-flex flex-column justify-content-center">
                             <h2 class="w-75">Découvrez nos <em>pralines</em></h2>
                             <p class="mb-5 w-75">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque vitae,
                                 cumque, aliquam
@@ -186,13 +193,13 @@
                                 corrupti corporis nostrum praesentium quod et.</p>
                             <a href="" class="btn btn-secondary">Toutes les pralines</a>
                         </div>
-                        <div class="col-xxl-6 order-xxl-last">
-                            <img src="./app/images/Flying chocolates 2018 CMYK 1.jpg" alt="Flying Chocolates 2018">
+                        <div class="col-6 offset-lg-0 offset-6 order-last d-flex justify-content-end justify-content-lg-start">
+                            <img src="./app/images/Flying chocolates 2018 CMYK 1.jpg" alt="Flying Chocolates 2018" class="img-fluid"/>
                         </div>
                     </div>
                     <div class="row gourmandises py-5">
                         <div
-                            class="col-xxl-5 offset-xxl-1 order-xxl-last p-5 d-flex flex-column justify-content-center">
+                            class="col-lg-5 offset-lg-1 order-last p-5 d-flex flex-column justify-content-center">
                             <h2>Craquez pour nos <em>gourmandises</em></h2>
                             <p class="mb-5 w-75">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque vitae,
                                 cumque, aliquam
@@ -200,9 +207,9 @@
                                 corrupti corporis nostrum praesentium quod et.</p>
                             <a href="" class="btn btn-secondary">Toutes les gourmandises</a>
                         </div>
-                        <div class="col-xxl-6 order-xxl-first">
+                        <div class="col-6 order-first d-flex justify-content-lg-end">
                             <img src="./app/images/Flying mendiant orange back CMYK 1.jpg"
-                                alt="Flying mendiant orange back ">
+                                alt="Flying mendiant orange back " class="img-fluid"/>
                         </div>
                     </div>
                 </div>
@@ -211,7 +218,7 @@
             <section id="moments" class="my-5">
                 <div class="container-fluid pe-0 position-relative">
                     
-                    <div class="moments-img position-absolute">
+                    <div class="moments-img position-absolute d-none d-xxl-block">
                             <img src="./app/images/img 885x870.png" alt="" class="img-fluid">
                         </div>
 
