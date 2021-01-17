@@ -7430,7 +7430,7 @@ h3, .h3 {
   padding: 3rem 0; }
 
 p, a {
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 400;
   color: #3D3D3D; }
 
@@ -7520,27 +7520,22 @@ div.menu {
 #decouverte .btn {
   max-width: fit-content; }
 
-#decouverte .pralines {
+#decouverte .pralines, #decouverte .gourmandises {
   min-height: 650px; }
-  #decouverte .pralines > div:last-child {
+  #decouverte .pralines > div:last-child, #decouverte .gourmandises > div:last-child {
+    min-height: 200px;
     position: relative;
-    left: -5%; }
-  #decouverte .pralines img {
-    position: absolute;
-    bottom: -10%;
-    z-index: 1; }
+    padding: 0; }
+    #decouverte .pralines > div:last-child img, #decouverte .gourmandises > div:last-child img {
+      position: relative;
+      max-width: calc(100% + 25px); }
 
-#decouverte .gourmandises {
-  min-height: 650px; }
-  #decouverte .gourmandises > div:last-child {
-    position: relative;
-    right: -45%;
-    top: -10%; }
-  #decouverte .gourmandises img {
-    position: absolute;
-    left: -45%;
-    top: -10%;
-    z-index: 0; }
+#decouverte .pralines > div:last-child {
+  transform: translateY(45px);
+  z-index: 1; }
+
+#decouverte .gourmandises > div:last-child {
+  transform: translateY(-45px); }
 
 /* ---------------------------------------- moments */
 #moments .row {
@@ -7649,3 +7644,37 @@ footer#footer li.nav-item {
 footer#footer .social-icon {
   margin-right: 1.5rem;
   margin-bottom: 1.5rem; }
+
+/* ---------------------------------------- media querries */
+/* Mobile */
+@media (max-width: 575px) {
+  h1, .h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff; }
+  h2, .h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3D3D3D; }
+    h2 em, .h2 em {
+      font-family: "Ubuntu";
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #3D3D3D; }
+  h3, .h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #3D3D3D; }
+  p, a {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #3D3D3D; }
+  #boutique {
+    width: 100%; } }
+
+/* Mobile */
+@media (min-width: 992px) {
+  #decouverte .pralines img {
+    left: -25px; }
+  #decouverte .gourmandises img {
+    right: -25px; } }
