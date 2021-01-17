@@ -1,5 +1,6 @@
 @import "../sass/variables.scss";
 @import "../sass/mixins.scss";
+@import "../sass/media-querries.scss";
 @import "../sass/utilities.scss";
 @import "bootstrap/scss/bootstrap.scss";
 
@@ -47,7 +48,7 @@ h3 {
 }
 
 p, a {
-    @include font-values(18px, 400);
+    @include font-values(1.8rem, 400);
 }
 
 li[class]{list-style: none;}
@@ -182,38 +183,35 @@ div.menu {
         max-width: fit-content;
     }
 
-    .pralines  {
+    .pralines, .gourmandises  {
         min-height: 650px;
 
          & > div:last-child {
+            min-height: 200px;
             position: relative;
-            left: -5%;
-        }
+            padding: 0;
 
-        img {
-            position: absolute;
-            bottom: -10%;
+            img {
+                position: relative;
+                max-width: calc(100% + 25px);
+            }
+        }
+    }
+
+    .pralines  {
+    
+        & > div:last-child { 
+            transform: translateY(45px); 
             z-index: 1;
         }
     }
 
-   
-
     .gourmandises {
-        min-height: 650px;
 
-        & > div:last-child {
-            position: relative;
-            right: -45%;
-            top: -10%;
+        & > div:last-child { 
+            transform: translateY(-45px); 
         }
-
-        img {
-            position: absolute;
-            left: -45%;
-            top: -10%;
-            z-index: 0;
-        }
+       
     }
 
 }
@@ -391,3 +389,69 @@ footer#footer {
         margin-bottom: 1.5rem;
     }
 }
+
+
+/* ---------------------------------------- media querries */
+
+/* Mobile */
+
+@include respond-below(sm) {
+
+//general
+
+    h1 {
+        @include font-values(3rem, 700, $white);
+    }
+    
+    h2 {
+        @include font-values(2.5rem, 700);
+    
+        em {
+            font-family: "Ubuntu";
+            @include font-values(2.5rem, 700);
+        }
+    
+    }
+    
+    h3 {
+        @include font-values(2rem, 700);
+    }
+    
+    p, a {
+        @include font-values(1.6rem, 400);
+    }
+
+
+// boutique
+
+    #boutique {
+        width: 100%;
+    }
+
+}
+
+
+
+/* Mobile */
+
+@include respond-above(lg) {
+
+//decouverte
+
+    #decouverte {
+
+        .pralines  {
+    
+            img {
+                left: -25px;
+            }
+        }    
+
+        .gourmandises  {
+    
+            img {
+                right: -25px;
+            }
+        }
+    }
+}    
