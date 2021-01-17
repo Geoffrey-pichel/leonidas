@@ -1,8 +1,21 @@
+// Font 
+
 @mixin font-values($fontsize, $fontweight, $fontcolor : $dark) {
     font-size: $fontsize;
     font-weight: $fontweight;
     color: $fontcolor;
 }
+
+// Background-image
+
+@mixin bg-img($url, $bg-size, $bg-position) {
+    $bg-url: "../images/#{$url}.png";
+    background: url($bg-url) no-repeat;
+    background-size: $bg-size;
+    background-position: $bg-position;
+}
+
+// SVG fill
 
 @mixin fill($fill: $primary) {
     fill: $fill;
