@@ -6,13 +6,24 @@
     color: $fontcolor;
 }
 
-// Background-image
+// Background-image 
 
 @mixin bg-img($url, $bg-size, $bg-position) {
     $bg-url: "../images/#{$url}.png";
     background: url($bg-url) no-repeat;
     background-size: $bg-size;
     background-position: $bg-position;
+}
+
+// Background icon
+
+@mixin bg-icon($url, $bg-position: center, $size: 15px, $bg-size: 100%) {
+    $bg-url: "../images/icons/#{$url}.svg";
+    background: url($bg-url) no-repeat;
+    background-position: $bg-position;
+    background-size: $bg-size auto;
+    height: $size;
+    width: $size;
 }
 
 // SVG fill
