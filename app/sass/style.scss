@@ -14,6 +14,12 @@
     z-index: 0;
 }
 
+%icon-pseudo-element {
+    display: inline-block;
+    vertical-align: middle;
+    content: "";
+}
+
 
 /* ---------------------------------------- general */
 
@@ -44,7 +50,11 @@ h2 {
 
 h3 {
     @include font-values(3rem, 700, $primary);
-    padding: 3rem 0;
+    padding: 0 0 2rem;
+}
+
+p {
+    padding-bottom: 1rem;
 }
 
 p, a {
@@ -100,24 +110,55 @@ header#header {
 
 .navbar {
     z-index: 99;
+    
+    .navbar-toggler-text {
+        @include font-values(2rem, 500, $white);
+    }
 }
-
-div.menu {
-    flex-direction: column;
-}
-
 
 .navbar-nav {
     justify-content: flex-end;
     li.nav-item {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
-        margin: .25rem 1rem;
+        margin: 1.5rem 1rem;
 
+        #search-icon::before {
+            @extend %icon-pseudo-element;            
+            @include bg-icon(search-icon);
+        }
+
+        #wishlist-link::before {
+            @extend %icon-pseudo-element;            
+            @include bg-icon(wishlist-icon);
+            margin-right: 0.5em;
+        }
+
+        .dropdown-icon::after {
+            @extend %icon-pseudo-element;            
+            @include bg-icon(chevron-bottom);
+            margin-left: 0.5em;
+        }
+        
          a.nav-link{
-            font-size: 2rem;
-            color: $white;        
+            @include font-values(2rem, 400, $white);     
+        }
+        
+         select {
+            @extend a.nav-link;
+            background-color: transparent;
+            margin-top: 2px; 
+            // remove default arrow
+            /* for Firefox */ 
+            -moz-appearance: none; 
+            /* for Safari, Chrome, Opera */ 
+            -webkit-appearance: none; 
+
+            /* for IE10 */ 
+            &::-ms-expand {
+                display: none;
+            }
         }
     }
 }
@@ -241,27 +282,60 @@ div.menu {
 /* ---------------------------------------- moments */
 
 #moments {
+    position: relative;
 
-    .row {
-        position: relative;
+    &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
         background-color: $orange-light;
     }
 
-    .moments-img img {
-            position: absolute;
-            top: 15%;
-            width: 100%;
+    .carousel {
+        position: relative;
     }
 
-    .moments-list {
-        padding: 6rem 0;
+    .ol {
+        padding-left: 0;
+    }
+
+    .carousel-indicators {
         position: relative;
-        top: 20%;
+        margin-right: 0;
+        margin-left: 0;
+
+        li {
+            box-sizing: border-box;
+            flex: unset;
+            width: unset;
+            height: unset;
+            margin-right: 0;
+            margin-left: 0;
+            padding: 0;
+            text-indent: 0;
+            cursor: pointer;
+            background-color: transparent;
+            border-top: 0;
+            border-bottom: 0;
+            opacity: 1;
+            transition: opacity none;
+        }
+    }
+
+    .carousel-list{
+        padding-top: 3rem;
+        justify-content: flex-start;
     }
 
     .moments-item {
         display: flex;
         position: relative;
+        margin-bottom: 1.5rem;
 
         &:last-of-type{
             margin-bottom: 3rem;
@@ -284,26 +358,14 @@ div.menu {
             fill: #D2DDF2;
         }
     }
-
-    svg.active {
-
-        path {
-            @include fill($secondary);
-        }
-        
-        .light-path {
-                fill: #F7B289;
-            }
-    }
-   
 }
 
 @media (min-width: 1920px) {
 
     #moments {
 
-        .moments-img img{
-            top: -100px;
+        .carousel-inner {
+            transform: translateY(-7%);
         }
     }
 
@@ -315,10 +377,6 @@ div.menu {
 
     img {
         padding: 3rem 0;
-    }
-
-    h3 {
-        padding: .75rem 0;
     }
 }
 
@@ -501,14 +559,6 @@ footer#footer {
         }
     }
 
-// moments
-
-    #moments {
-
-        .moments-list {
-            padding: 6rem 1rem;
-        }
-    }
 
 //qualite 
 
@@ -516,10 +566,6 @@ footer#footer {
 
     img {
         max-width: 50px;
-    }
-
-    .text {
-        padding: 1.5rem 0 1.5rem 1.5rem;
     }
 }
 
@@ -549,6 +595,16 @@ footer#footer {
 }
 
 
+/* min-width: 768px */
+
+@include respond-above(md) {
+
+//moments
+
+    .moments-item {
+        margin-bottom: 2.5rem;
+    }
+}
 
 /* min-width: 992px */
 
@@ -585,18 +641,49 @@ footer#footer {
 }    
 
 
+/* max-width: 991px */
+
+@include respond-below(lg) {
+
+//general
+
+    h2 {
+
+        em  {
+            text-transform: capitalize;
+        }    
+    }
+
+//qualite
+
+   #qualite {
+
+        .text  {
+            padding: 1.5rem 0 1.5rem 1.5rem;
+        }    
+    }
+
+//footer
+
+    #footer{
+
+        .container{
+            padding: 0;
+        }
+    }
+
+}    
+
+
 /* min-width: 768px and max-width: 1199px */
 
-@include respond-between(lg, xl) { 
+@include respond-between(md, xxl) { 
 
-// decouverte
+//general
 
-    #decouverte {
-
-        h2 {
-            em {
-                @include font-values(4.8rem, 400, $primary);
-            }
+    h2 {                    
+        em {
+            @include font-values(4.8rem, 700, $primary);
         }
     }
 }
@@ -606,17 +693,16 @@ footer#footer {
 
 @include respond-below(xl) { 
 
-// decouverte
+//general
 
-    #decouverte {
-
-        h2 {
-            text-transform: capitalize;
-                        
-            em {
-                font-family: "Ubuntu";
-            }
+    h2 {                    
+        em {
+            font-family: "Ubuntu";
         }
+    }
+
+    h3 {
+        padding: .75rem 0;
     }
 }
 
@@ -633,11 +719,23 @@ footer#footer {
             margin-bottom: 3rem;
         }
     }
+    
 }
 
 /* min-width: 1440px */
 
 @include respond-above(xxl) {
+
+//navigation
+
+.navbar-nav {
+
+    li.nav-item {
+        margin: .25rem 1rem;
+    }
+
+}
+
 
 //boutique
 
@@ -668,7 +766,51 @@ footer#footer {
 
     #moments {
 
-        .moments-item:before {
+        &:after {
+            width: 75%;
+        }
+
+        .carousel {
+            max-height: 1200px;
+        }
+
+        .carousel-inner {
+            width: 50%;
+        }
+
+        .carousel-item {
+            height: 100%;
+        }
+
+        .moments-img {
+                max-height: 1000px;
+                overflow: hidden;
+
+            & > img{
+                width: 100%;
+            }
+        }
+
+        .moments-item {
+
+            &.active {
+                transform: translateX(-7%);
+                transition: transform .3s ease;
+
+                h3, p {
+                    color: $secondary;
+                }
+
+                path {
+                    @include fill($secondary);
+                }
+                    
+                .light-path {
+                    fill: #F7B289;
+                }
+            }
+
+            &.active:before {
                 content: "";
                 display: block;
                 height: 3px;
@@ -678,10 +820,15 @@ footer#footer {
                 left: -200px;
                 top: 25%;
                 z-index: 99;
+            }
+
+            &:hover {
+                @extend .moments-item.active;
+            }
         }
 
         .description {
-            max-width: 50%;
+            max-width: 75%;
         }
     }
 
