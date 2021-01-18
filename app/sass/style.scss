@@ -1,12 +1,18 @@
 @import "../sass/variables.scss";
 @import "../sass/mixins.scss";
 @import "../sass/media-querries.scss";
-@import "../sass/utilities.scss";
+@import "../sass/fonts.scss";
 @import "bootstrap/scss/bootstrap.scss";
 
 
 
 /* ---------------------------------------- sass placeholders */
+
+%flex-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 %section-img {
     width: auto;
@@ -53,31 +59,51 @@ h3 {
     padding: 0 0 2rem;
 }
 
+a, p, select {
+    @include font-values(1.8rem, 400);
+}
+
 p {
     padding-bottom: 1rem;
 }
 
-p, a {
-    @include font-values(1.8rem, 400);
-}
-
 li[class]{list-style: none;}
 
-
-a.btn {
+.btn {
     font-size: 1.8rem;
     padding: 1.5rem 3rem; 
     @include rounded;
 }
 
-.btn.btn-primary,
-.btn.btn-secondary {
+.btn-primary,
+.btn-secondary {
     color: #ffffff;
+
+    &:hover {
+        color: $white;
+    }
 }
 
 figcaption {
-    @include font-values(25px, 400)
+    @include font-values(25px, 400);
 }
+
+
+/* ---------------------------------------- fonts */
+
+
+@include fontface('Ubuntu', '../dist/fonts/ubuntu/Ubuntu-Light', 300, normal, ttf);
+@include fontface('Ubuntu', '../dist/fonts/ubuntu/Ubuntu-LightItalic', 300, italic, ttf);
+
+@include fontface('Ubuntu', '../dist/fonts/ubuntu/Ubuntu-Regurlar', 400, normal,ttf);
+@include fontface('Ubuntu', '../dist/fonts/ubuntu/Ubuntu-Italic', 400, italic, ttf);
+
+@include fontface('Ubuntu', '../dist/fonts/ubuntu/Ubuntu-Medium', 500, normal, ttf);
+@include fontface('Ubuntu', '../dist/fonts/ubuntu/Ubuntu-MediumItalic', 500, italic, ttf);
+
+@include fontface('Ubuntu', '../dist/fonts/ubuntu/Ubuntu-Bold', 700, normal, ttf);
+@include fontface('Ubuntu', '../dist/fonts/ubuntu/Ubuntu-BoldItalic', 700, italic, ttf);
+
 
 
 /* ---------------------------------------- header */
@@ -114,60 +140,70 @@ header#header {
     .navbar-toggler-text {
         @include font-values(2rem, 500, $white);
     }
+
+    .navbar-nav {
+        justify-content: flex-end;
+
+    }
 }
-
-.navbar-nav {
-    justify-content: flex-end;
-    li.nav-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 1.5rem 1rem;
-
-        #search-icon::before {
-            @extend %icon-pseudo-element;            
-            @include bg-icon(search-icon);
-        }
-
-        #wishlist-link::before {
-            @extend %icon-pseudo-element;            
-            @include bg-icon(wishlist-icon);
-            margin-right: 0.5em;
-        }
-
-        .dropdown-icon::after {
-            @extend %icon-pseudo-element;            
-            @include bg-icon(chevron-bottom);
-            margin-left: 0.5em;
-        }
         
-         a.nav-link{
-            @include font-values(2rem, 400, $white);     
-        }
-        
-         select {
-            @extend a.nav-link;
-            background-color: transparent;
-            margin-top: 2px; 
-            // remove default arrow
-            /* for Firefox */ 
-            -moz-appearance: none; 
-            /* for Safari, Chrome, Opera */ 
-            -webkit-appearance: none; 
+.menu {
 
-            /* for IE10 */ 
-            &::-ms-expand {
-                display: none;
-            }
+    .nav-link{
+        color: $white;
+        transition: color .3s ease-in-out;
+        
+        &:hover{
+        color: $primary;       
+        }
+    }
+
+    select {
+        @extend .nav-link;
+        cursor: pointer;
+        background-color: transparent;
+        margin-top: 2px; 
+        // remove default arrow
+        /* for Firefox */ 
+        -moz-appearance: none; 
+        /* for Safari, Chrome, Opera */ 
+        -webkit-appearance: none; 
+        
+        /* for IE10 */ 
+        &::-ms-expand {
+            display: none;
         }
     }
 }
 
-.nav {
-    ul li a.nav-link {
-        text-transform: uppercase;
+.nav li.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.5rem 1rem;
+    text-transform: uppercase;
+
+    .dropdown-icon::after {
+        @extend %icon-pseudo-element;            
+        @include bg-icon(chevron-bottom);
+        margin-left: 0.5em;
     }
 }
+
+.topnav {
+
+    #search-icon::before {
+        @extend %icon-pseudo-element;            
+        @include bg-icon(search-icon);
+    }
+
+    #wishlist-link::before {
+        @extend %icon-pseudo-element;            
+        @include bg-icon(wishlist-icon);
+        margin-right: 0.5em;
+    }
+}
+
 
 /* ---------------------------------------- boutique */
 
@@ -176,8 +212,10 @@ header#header {
     z-index: 2;
 
     .search-form input {
-        @extend a.btn;
+        @extend .btn;
+        text-align: left;
         max-width: 400px;
+        background-color: $white;
 
         &::placeholder {
             color: $primary
@@ -226,10 +264,6 @@ header#header {
         }
 
     }
-
-    .btn-light {
-        color: $primary;
-    }
 }
 
 .saison-img{
@@ -241,7 +275,7 @@ header#header {
 
 #decouverte {
     
-    .btn {
+    .decouverte-link {
         max-width: fit-content;
     }
 
@@ -323,7 +357,6 @@ header#header {
             border-top: 0;
             border-bottom: 0;
             opacity: 1;
-            transition: opacity none;
         }
     }
 
@@ -404,12 +437,9 @@ header#header {
 
 /* ---------------------------------------- À propos */
 
-#apropos {
-
-    .row {
-        @extend %flex-align;
-        border-bottom: 3px solid $secondary;
-    }
+#apropos .row {
+    @extend %flex-align;
+    border-bottom: 3px solid $secondary;
 }
 
 
@@ -425,11 +455,7 @@ footer#footer {
         display: flex;
         align-items: center;
 
-        a.nav-link {
-            text-transform: uppercase;
-            color: $primary;
-        }
-
+       
         &:last-of-type {
             margin-bottom: 3rem;
         }
@@ -442,8 +468,16 @@ footer#footer {
             margin-right: 1.5rem;
             display: inline-block;
         }
+    }
 
-       
+    & a {
+        text-transform: uppercase;
+        color: $primary;
+        transition: color .3s ease-in-out;
+
+        &:hover {
+            color: $secondary;
+        }
     }
 
     .social-icon {
@@ -484,7 +518,7 @@ footer#footer {
         @include font-values(1.6rem, 400);
     }
 
-    a.btn {
+    .btn {
         padding: 1.5rem 1.5rem;
     } 
     
@@ -554,7 +588,7 @@ footer#footer {
 
     #decouverte {
 
-        a.btn {
+        .decouverte-link {
             margin: auto;
         }
     }
@@ -792,10 +826,10 @@ footer#footer {
         }
 
         .moments-item {
+            transition: transform .3s ease-in-out;
 
             &.active {
                 transform: translateX(-7%);
-                transition: transform .3s ease;
 
                 h3, p {
                     color: $secondary;
