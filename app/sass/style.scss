@@ -92,17 +92,17 @@ figcaption {
 /* ---------------------------------------- fonts */
 
 
-@include fontface('Ubuntu', '../dist/fonts/ubuntu/Ubuntu-Light', 300, normal, ttf);
-@include fontface('Ubuntu', '../dist/fonts/ubuntu/Ubuntu-LightItalic', 300, italic, ttf);
+@include fontface('Ubuntu', '../fonts/ubuntu/Ubuntu-Light', 300, normal, ttf);
+@include fontface('Ubuntu', '../fonts/ubuntu/Ubuntu-LightItalic', 300, italic, ttf);
 
-@include fontface('Ubuntu', '../dist/fonts/ubuntu/Ubuntu-Regurlar', 400, normal,ttf);
-@include fontface('Ubuntu', '../dist/fonts/ubuntu/Ubuntu-Italic', 400, italic, ttf);
+@include fontface('Ubuntu', '../fonts/ubuntu/Ubuntu-Regular', 400, normal,ttf);
+@include fontface('Ubuntu', '../fonts/ubuntu/Ubuntu-Italic', 400, italic, ttf);
 
-@include fontface('Ubuntu', '../dist/fonts/ubuntu/Ubuntu-Medium', 500, normal, ttf);
-@include fontface('Ubuntu', '../dist/fonts/ubuntu/Ubuntu-MediumItalic', 500, italic, ttf);
+@include fontface('Ubuntu', '../fonts/ubuntu/Ubuntu-Medium', 500, normal, ttf);
+@include fontface('Ubuntu', '../fonts/ubuntu/Ubuntu-MediumItalic', 500, italic, ttf);
 
-@include fontface('Ubuntu', '../dist/fonts/ubuntu/Ubuntu-Bold', 700, normal, ttf);
-@include fontface('Ubuntu', '../dist/fonts/ubuntu/Ubuntu-BoldItalic', 700, italic, ttf);
+@include fontface('Ubuntu', '../fonts/ubuntu/Ubuntu-Bold', 700, normal, ttf);
+@include fontface('Ubuntu', '../fonts/ubuntu/Ubuntu-BoldItalic', 700, italic, ttf);
 
 
 
@@ -176,11 +176,14 @@ header#header {
     }
 }
 
-.nav li.nav-item {
+.navbar-nav li.nav-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 1.5rem 1rem;
+}
+
+.nav li.nav-item {
     text-transform: uppercase;
 
     .dropdown-icon::after {
@@ -202,6 +205,7 @@ header#header {
         @include bg-icon(wishlist-icon);
         margin-right: 0.5em;
     }
+    
 }
 
 
@@ -350,7 +354,7 @@ header#header {
             height: unset;
             margin-right: 0;
             margin-left: 0;
-            padding: 0;
+            padding: 0 0 .75rem;
             text-indent: 0;
             cursor: pointer;
             background-color: transparent;
@@ -368,7 +372,6 @@ header#header {
     .moments-item {
         display: flex;
         position: relative;
-        margin-bottom: 1.5rem;
 
         &:last-of-type{
             margin-bottom: 3rem;
@@ -737,6 +740,20 @@ footer#footer {
 
     h3 {
         padding: .75rem 0;
+    }
+}
+
+/* min-width: 1200px and max-width: 1439px */
+
+@include respond-between(xl, xxl) { 
+
+//decouverte
+
+    #decouverte {
+
+        .pralines>div:last-child {
+            margin-left: 0;
+        }
     }
 }
 
