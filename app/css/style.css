@@ -7500,49 +7500,49 @@ figcaption {
   font-family: "Ubuntu";
   font-style: normal;
   font-weight: 300;
-  src: url("../dist/fonts/ubuntu/Ubuntu-Light.ttf") format("truetype"); }
+  src: url("../fonts/ubuntu/Ubuntu-Light.ttf") format("truetype"); }
 
 @font-face {
   font-family: "Ubuntu";
   font-style: italic;
   font-weight: 300;
-  src: url("../dist/fonts/ubuntu/Ubuntu-LightItalic.ttf") format("truetype"); }
+  src: url("../fonts/ubuntu/Ubuntu-LightItalic.ttf") format("truetype"); }
 
 @font-face {
   font-family: "Ubuntu";
   font-style: normal;
   font-weight: 400;
-  src: url("../dist/fonts/ubuntu/Ubuntu-Regurlar.ttf") format("truetype"); }
+  src: url("../fonts/ubuntu/Ubuntu-Regular.ttf") format("truetype"); }
 
 @font-face {
   font-family: "Ubuntu";
   font-style: italic;
   font-weight: 400;
-  src: url("../dist/fonts/ubuntu/Ubuntu-Italic.ttf") format("truetype"); }
+  src: url("../fonts/ubuntu/Ubuntu-Italic.ttf") format("truetype"); }
 
 @font-face {
   font-family: "Ubuntu";
   font-style: normal;
   font-weight: 500;
-  src: url("../dist/fonts/ubuntu/Ubuntu-Medium.ttf") format("truetype"); }
+  src: url("../fonts/ubuntu/Ubuntu-Medium.ttf") format("truetype"); }
 
 @font-face {
   font-family: "Ubuntu";
   font-style: italic;
   font-weight: 500;
-  src: url("../dist/fonts/ubuntu/Ubuntu-MediumItalic.ttf") format("truetype"); }
+  src: url("../fonts/ubuntu/Ubuntu-MediumItalic.ttf") format("truetype"); }
 
 @font-face {
   font-family: "Ubuntu";
   font-style: normal;
   font-weight: 700;
-  src: url("../dist/fonts/ubuntu/Ubuntu-Bold.ttf") format("truetype"); }
+  src: url("../fonts/ubuntu/Ubuntu-Bold.ttf") format("truetype"); }
 
 @font-face {
   font-family: "Ubuntu";
   font-style: italic;
   font-weight: 700;
-  src: url("../dist/fonts/ubuntu/Ubuntu-BoldItalic.ttf") format("truetype"); }
+  src: url("../fonts/ubuntu/Ubuntu-BoldItalic.ttf") format("truetype"); }
 
 /* ---------------------------------------- header */
 header, #saison {
@@ -7588,11 +7588,13 @@ header#header .main-content {
   .menu select::-ms-expand {
     display: none; }
 
-.nav li.nav-item {
+.navbar-nav li.nav-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1.5rem 1rem;
+  margin: 1.5rem 1rem; }
+
+.nav li.nav-item {
   text-transform: uppercase; }
   .nav li.nav-item .dropdown-icon::after {
     background: url("../images/icons/chevron-bottom.svg") no-repeat;
@@ -7700,7 +7702,7 @@ header#header .main-content {
       height: unset;
       margin-right: 0;
       margin-left: 0;
-      padding: 0;
+      padding: 0 0 .75rem;
       text-indent: 0;
       cursor: pointer;
       background-color: transparent;
@@ -7712,8 +7714,7 @@ header#header .main-content {
     justify-content: flex-start; }
   #moments .moments-item {
     display: flex;
-    position: relative;
-    margin-bottom: 1.5rem; }
+    position: relative; }
     #moments .moments-item:last-of-type {
       margin-bottom: 3rem; }
   #moments svg {
@@ -7889,6 +7890,11 @@ footer#footer .social-icon {
     font-family: "Ubuntu"; }
   h3, .h3 {
     padding: .75rem 0; } }
+
+/* min-width: 1200px and max-width: 1439px */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  #decouverte .pralines > div:last-child {
+    margin-left: 0; } }
 
 /* max-width: 1439px */
 @media (max-width: 1439px) {
