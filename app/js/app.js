@@ -18,3 +18,9 @@ screenClass();
 window.addEventListener('resize', function(){
     screenClass();
 });
+
+// carousel moment-item:hover = carousel-item.active
+
+$('.carousel-indicators  li').on('mouseover',function(){
+    $(this).trigger('click');
+})
